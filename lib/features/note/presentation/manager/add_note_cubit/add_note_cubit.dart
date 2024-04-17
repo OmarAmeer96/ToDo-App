@@ -1,9 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:meta/meta.dart';
 import 'package:todo_app/constants.dart';
-import 'package:todo_app/models/note_model.dart';
+import 'package:todo_app/features/note/data/models/note_model.dart';
 
 part 'add_note_state.dart';
 

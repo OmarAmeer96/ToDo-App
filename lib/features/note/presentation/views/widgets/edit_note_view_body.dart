@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/models/note_model.dart';
-import 'package:todo_app/views/widgets/custom_text_field.dart';
+import 'package:todo_app/features/note/data/models/note_model.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/custom_text_field.dart';
 import '../../manager/notes_cubit/notes_cubit.dart';
-import '../../services/show_success_snack_bar.dart';
+import '../../../../../core/functions/show_success_snack_bar.dart';
 import 'custom_app_bar.dart';
 import 'edit_note_colors_list.dart';
 

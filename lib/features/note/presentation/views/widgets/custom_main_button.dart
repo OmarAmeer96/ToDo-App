@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/constants.dart';
-import 'package:todo_app/manager/add_note_cubit/add_note_cubit.dart';
-import 'package:todo_app/manager/notes_cubit/notes_cubit.dart';
-import '../../services/show_error_snack_bar.dart';
-import '../../services/show_success_snack_bar.dart';
+import 'package:todo_app/features/note/presentation/manager/add_note_cubit/add_note_cubit.dart';
+import 'package:todo_app/features/note/presentation/manager/notes_cubit/notes_cubit.dart';
+import '../../../../../core/functions/show_error_snack_bar.dart';
+import '../../../../../core/functions/show_success_snack_bar.dart';
 import 'custom_circular_progress_indicator.dart';
 
 class CustomMainButton extends StatelessWidget {
@@ -14,12 +14,12 @@ class CustomMainButton extends StatelessWidget {
   final double height;
 
   const CustomMainButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.color = kPrimaryColor,
     this.height = 55,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

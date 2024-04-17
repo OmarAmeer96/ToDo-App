@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:todo_app/manager/notes_cubit/notes_cubit.dart';
-import 'package:todo_app/views/edit_note_view.dart';
+import 'package:todo_app/features/note/presentation/manager/notes_cubit/notes_cubit.dart';
+import 'package:todo_app/features/note/presentation/views/edit_note_view.dart';
 
-import '../../models/note_model.dart';
+import '../../../data/models/note_model.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});

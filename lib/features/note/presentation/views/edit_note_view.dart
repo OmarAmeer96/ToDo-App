@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/note_model.dart';
+import '../../data/models/note_model.dart';
 import 'widgets/edit_note_view_body.dart';
 
 class EditNoteView extends StatelessWidget {

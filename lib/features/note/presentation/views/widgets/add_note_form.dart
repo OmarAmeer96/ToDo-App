@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/manager/add_note_cubit/add_note_cubit.dart';
-import 'package:todo_app/models/note_model.dart';
+import 'package:todo_app/features/note/presentation/manager/add_note_cubit/add_note_cubit.dart';
+import 'package:todo_app/features/note/data/models/note_model.dart';
 import 'colors_list_view.dart';
 import 'custom_main_button.dart';
 import 'custom_text_field.dart';
