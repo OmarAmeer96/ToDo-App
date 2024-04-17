@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/constants.dart';
-import 'package:todo_app/cubits/add_note_cubit/add_note_cubit.dart';
-import 'package:todo_app/cubits/notes_cubit/notes_cubit.dart';
+import 'package:todo_app/manager/add_note_cubit/add_note_cubit.dart';
+import 'package:todo_app/manager/notes_cubit/notes_cubit.dart';
 import '../../services/show_error_snack_bar.dart';
 import '../../services/show_success_snack_bar.dart';
 import 'custom_circular_progress_indicator.dart';

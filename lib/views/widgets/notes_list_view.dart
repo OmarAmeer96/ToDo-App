@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/cubits/notes_cubit/notes_cubit.dart';
+import 'package:todo_app/manager/notes_cubit/notes_cubit.dart';
 import 'package:todo_app/models/note_model.dart';
 import 'package:todo_app/views/widgets/note_item.dart';
 
