@@ -4,9 +4,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:todo_app/constants.dart';
 import 'package:todo_app/features/note/presentation/manager/add_note_cubit/add_note_cubit.dart';
 import 'package:todo_app/features/note/data/models/note_model.dart';
+import 'package:todo_app/features/splash/views/splash_view.dart';
 import 'package:todo_app/simple_bloc_observer.dart';
-import 'package:todo_app/features/note/presentation/views/notes_view.dart';
-
 import 'features/note/presentation/manager/notes_cubit/notes_cubit.dart';
 
 void main() async {
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark,
             fontFamily: "Poppins-Medium",
           ),
-          home: const NotesView(),
+          home: const SplashView(),
         ),
       ),
     );

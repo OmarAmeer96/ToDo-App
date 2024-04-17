@@ -58,10 +58,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var noteModel = NoteModel(
+                  category: 'Category',
+                  categoryIcon: 'assets/svg/work.svg',
+                  endDate: 'End Date',
+                  priority: 0,
                   title: title!,
                   subTitle: subTitle!,
                   // date:  DateTime.now().toString(),
-                  date: DateFormat('yyyy-MM-dd').format(DateTime.now()),
+                  startDate:
+                      DateFormat('yyyy/MM/dd HH:mm').format(DateTime.now()),
                   color: Colors.deepOrange.value,
                 );
                 BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);

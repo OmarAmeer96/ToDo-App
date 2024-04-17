@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:todo_app/core/functions/show_error_snack_bar.dart';
 import 'package:todo_app/features/note/presentation/manager/notes_cubit/notes_cubit.dart';
 import 'package:todo_app/features/note/presentation/views/edit_note_view.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/category_item.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/priority_item.dart';
 
 import '../../../data/models/note_model.dart';
 
@@ -47,7 +52,65 @@ class NoteItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  ListTile(
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 20,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              note.title,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 24,
+                                fontFamily: 'Lato-Bold',
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(
+                                FontAwesomeIcons.trash,
+                                color: Colors.black,
+                                size: 22,
+                              ),
+                              onPressed: () {
+                                note.delete();
+                                BlocProvider.of<NotesCubit>(context)
+                                    .fetchAllNotes();
+                                // showErrorSnackBar(context, "Note successfully deleted");
+                              },
+                            ),
+                          ],
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            note.subTitle,
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.8),
+                              fontSize: 23,
+                              fontFamily: 'Lato-Regular',
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            CategoryItem(
+                              note: note,
+                            ),
+                            PriorityItem(),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  /* ListTile(
                     title: Text(
                       note.title,
                       style: const TextStyle(
@@ -77,17 +140,17 @@ class NoteItem extends StatelessWidget {
                         // showErrorSnackBar(context, "Note successfully deleted");
                       },
                     ),
-                  ),
+                  ), */
                   Padding(
                     padding: const EdgeInsets.only(right: 28),
                     child: Text(
-                      note.date,
+                      note.startDate,
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.5),
-                        fontSize: 15,
+                        fontSize: 16,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
