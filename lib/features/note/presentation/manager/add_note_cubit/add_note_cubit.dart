@@ -12,9 +12,15 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   bool isLoading = false;
   bool get isCurrentlyLoading => isLoading;
   Color color = const Color(0xff2191FB);
+  String categoryIcon = "assets/svg/design.svg";
+  int priority = 1;
+  String category = "Design";
   // Method to add notes in the HIVE database
   addNote(NoteModel note) async {
     note.color = color.value;
+    note.categoryIcon = categoryIcon;
+    note.priority = priority;
+    note.category = category;
     isLoading = true;
     emit(AddNoteLoading());
     try {

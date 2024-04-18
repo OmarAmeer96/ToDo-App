@@ -22,6 +22,7 @@ class PriorityItem extends StatelessWidget {
         children: [
           SvgPicture.asset(
             'assets/svg/flag.svg',
+            // ignore: deprecated_member_use
             color: Colors.black,
             width: 18,
           ),

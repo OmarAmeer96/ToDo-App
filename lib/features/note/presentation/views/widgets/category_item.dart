@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:todo_app/constants.dart';
 import 'package:todo_app/features/note/data/models/note_model.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -22,6 +21,7 @@ class CategoryItem extends StatelessWidget {
         children: [
           SvgPicture.asset(
             note.categoryIcon,
+            // ignore: deprecated_member_use
             color: Colors.black,
             width: 18,
           ),

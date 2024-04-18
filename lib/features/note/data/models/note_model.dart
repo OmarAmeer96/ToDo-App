@@ -10,7 +10,6 @@ class NoteModel extends HiveObject {
   String subTitle;
   @HiveField(2)
   final String date;
-
   @HiveField(3)
   String category;
   @HiveField(4)

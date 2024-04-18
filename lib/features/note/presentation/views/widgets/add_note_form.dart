@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/note/presentation/manager/add_note_cubit/add_note_cubit.dart';
 import 'package:todo_app/features/note/data/models/note_model.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/categories_list_view.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/category_text_list_view.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/priorities_list_view.dart';
 import 'colors_list_view.dart';
 import 'custom_main_button.dart';
 import 'custom_text_field.dart';
@@ -47,8 +50,19 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 20,
           ),
-
           const ColorsListView(),
+          const SizedBox(
+            height: 15,
+          ),
+          const CategoriesListView(),
+          const SizedBox(
+            height: 15,
+          ),
+          const PrioritiesListView(),
+          const SizedBox(
+            height: 15,
+          ),
+          const CategoryTextListView(),
           const SizedBox(
             height: 20,
           ),
@@ -58,13 +72,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var noteModel = NoteModel(
-                  category: 'Category',
-                  categoryIcon: 'assets/svg/work.svg',
-                  priority: 0,
+                  category: 'Design',
+                  categoryIcon: 'assets/svg/design.svg',
+                  priority: 1,
                   title: title!,
                   subTitle: subTitle!,
-                  // date:  DateTime.now().toString(),
-                  date: DateFormat('MM/dd HH:mm').format(DateTime.now()),
+                  date: DateFormat('MM/dd hh:mm a').format(DateTime.now()),
                   color: Colors.deepOrange.value,
                 );
                 BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);

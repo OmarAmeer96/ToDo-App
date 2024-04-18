@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:todo_app/core/functions/show_error_snack_bar.dart';
 import 'package:todo_app/features/note/presentation/manager/notes_cubit/notes_cubit.dart';
 import 'package:todo_app/features/note/presentation/views/edit_note_view.dart';
 import 'package:todo_app/features/note/presentation/views/widgets/category_item.dart';
