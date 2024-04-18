@@ -22,8 +22,6 @@ class CategoryListViewIem extends StatelessWidget {
                 categoryIcon,
                 // ignore: deprecated_member_use
                 color: Colors.white,
-                height: 35,
-                width: 35,
               ),
             ),
           )
