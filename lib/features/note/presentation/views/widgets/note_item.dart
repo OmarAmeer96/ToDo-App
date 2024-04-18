@@ -17,7 +17,8 @@ class NoteItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color baseColor = Color(note.color);
+    // Color baseColor = const Color(note.color);
+    Color baseColor = const Color(0xFF363636);
     Color greyColor = Colors.grey;
     Color? blendedColor = Color.lerp(baseColor, greyColor, 0.35);
     return GestureDetector(
@@ -41,13 +42,14 @@ class NoteItem extends StatelessWidget {
                 bottom: 24,
                 left: 10,
               ),
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(16),
                   bottomRight: Radius.circular(16),
                   topLeft: Radius.circular(16),
                 ),
-                color: Color(note.color),
+                // color: Color(note.color),
+                color: Color(0xFF363636),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -55,34 +57,38 @@ class NoteItem extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
-                      vertical: 20,
+                      vertical: 15,
                     ),
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               note.title,
                               style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 24,
                                 fontFamily: 'Lato-Bold',
                               ),
                             ),
-                            IconButton(
-                              icon: const Icon(
-                                FontAwesomeIcons.trash,
-                                color: Colors.black,
-                                size: 22,
+                            const Spacer(),
+                            const Text(
+                              'Due To:  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontFamily: 'Lato-Regular',
                               ),
-                              onPressed: () {
-                                note.delete();
-                                BlocProvider.of<NotesCubit>(context)
-                                    .fetchAllNotes();
-                                // showErrorSnackBar(context, "Note successfully deleted");
-                              },
                             ),
+                            Text(
+                              note.date,
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.5),
+                                fontSize: 14,
+                                fontFamily: 'Lato-Bold',
+                              ),
+                            ),
+                            const SizedBox(width: 10),
                           ],
                         ),
                         Align(
@@ -90,22 +96,11 @@ class NoteItem extends StatelessWidget {
                           child: Text(
                             note.subTitle,
                             style: TextStyle(
-                              color: Colors.black.withOpacity(0.8),
+                              color: Colors.white.withOpacity(0.8),
                               fontSize: 23,
                               fontFamily: 'Lato-Regular',
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Row(
-                          children: [
-                            CategoryItem(
-                              note: note,
-                            ),
-                            PriorityItem(),
-                          ],
                         ),
                       ],
                     ),
@@ -141,15 +136,23 @@ class NoteItem extends StatelessWidget {
                       },
                     ),
                   ), */
-                  Padding(
-                    padding: const EdgeInsets.only(right: 28),
-                    child: Text(
-                      note.startDate,
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
-                        fontSize: 16,
+                  Row(
+                    children: [
+                      CategoryItem(note: note),
+                      PriorityItem(note: note),
+                      const Spacer(),
+                      IconButton(
+                        icon: const Icon(
+                          FontAwesomeIcons.trash,
+                          color: Colors.white,
+                          size: 22,
+                        ),
+                        onPressed: () {
+                          note.delete();
+                          BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                        },
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),

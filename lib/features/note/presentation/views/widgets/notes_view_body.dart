@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo_app/features/note/presentation/views/widgets/notes_list_view.dart';
 import '../../manager/notes_cubit/notes_cubit.dart';
 import 'custom_app_bar.dart';
@@ -26,7 +27,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
         children: [
           CustomAppBar(
             onPressed: () {},
-            icon: Icons.search,
+            icon: Icons.filter_list,
             title: "Notes",
           ),
           const Expanded(

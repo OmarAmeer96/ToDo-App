@@ -22,3 +22,24 @@ List<Color> kColors = const [
   Color(0xff929487),
   Color(0xff9ED8DB),
 ];
+
+List<String> kCategories = const [
+  "assets/svg/design.svg",
+  "assets/svg/food.svg",
+  "assets/svg/health.svg",
+  "assets/svg/home.svg",
+  "assets/svg/movie.svg",
+  "assets/svg/music.svg",
+  "assets/svg/sport.svg",
+  "assets/svg/social.svg",
+  "assets/svg/university.svg",
+  "assets/svg/work.svg",
+];
+
+List<int> kPriorities = const [
+  1,
+  2,
+  3,
+  4,
+  5,
+];

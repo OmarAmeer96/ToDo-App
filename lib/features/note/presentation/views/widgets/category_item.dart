@@ -12,9 +12,9 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 5),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
       decoration: BoxDecoration(
-        color: kPrimaryColor,
+        color: Color(note.color),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
@@ -23,14 +23,14 @@ class CategoryItem extends StatelessWidget {
           SvgPicture.asset(
             note.categoryIcon,
             color: Colors.black,
-            width: 20,
+            width: 18,
           ),
           const SizedBox(width: 5),
           Text(
             note.category,
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: 13,
             ),
           ),
         ],

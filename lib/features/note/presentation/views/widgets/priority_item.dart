@@ -12,7 +12,7 @@ class PriorityItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 5),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
       decoration: BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.circular(16),
@@ -21,16 +21,16 @@ class PriorityItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           SvgPicture.asset(
-            note.categoryIcon,
+            'assets/svg/flag.svg',
             color: Colors.black,
-            width: 20,
+            width: 18,
           ),
           const SizedBox(width: 5),
           Text(
             note.priority.toString(),
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: 13,
             ),
           ),
         ],
