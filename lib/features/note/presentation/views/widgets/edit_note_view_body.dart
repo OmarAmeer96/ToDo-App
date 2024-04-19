@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/note/data/models/note_model.dart';
 import 'package:todo_app/features/note/presentation/views/widgets/custom_text_field.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/edit_category_text_list_view.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/edit_note_categories_list_view.dart';
+import 'package:todo_app/features/note/presentation/views/widgets/edit_note_priorities_list_view.dart';
 import '../../manager/notes_cubit/notes_cubit.dart';
 import '../../../../../core/functions/show_success_snack_bar.dart';
 import 'custom_app_bar.dart';
@@ -63,6 +66,27 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           ),
           EditNoteColorsList(
             note: widget.note,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          EditNoteCategoriesListView(
+            note: widget.note,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          EditNoteCategoryTextListView(
+            note: widget.note,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          EditNotePrioritiesListView(
+            note: widget.note,
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),
