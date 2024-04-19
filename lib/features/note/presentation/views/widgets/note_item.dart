@@ -91,14 +91,14 @@ class NoteItem extends StatelessWidget {
                             //   ),
                             // ),
                             const Spacer(),
-                            const Text(
-                              'Due To:  ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontFamily: 'Lato-Regular',
-                              ),
-                            ),
+                            // const Text(
+                            //   'Created at:  ',
+                            //   style: TextStyle(
+                            //     color: Colors.white,
+                            //     fontSize: 14,
+                            //     fontFamily: 'Lato-Regular',
+                            //   ),
+                            // ),
                             Text(
                               note.date,
                               style: TextStyle(
