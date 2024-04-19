@@ -18,6 +18,8 @@ class NoteModel extends HiveObject {
   int color;
   @HiveField(6)
   int priority;
+  @HiveField(7)
+  bool completed;
 
   NoteModel({
     required this.title,
@@ -27,5 +29,6 @@ class NoteModel extends HiveObject {
     required this.categoryIcon,
     required this.color,
     required this.priority,
+    required this.completed,
   });
 }

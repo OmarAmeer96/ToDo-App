@@ -72,6 +72,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var noteModel = NoteModel(
+                  completed: false,
                   category: 'Design',
                   categoryIcon: 'assets/svg/design.svg',
                   priority: 1,

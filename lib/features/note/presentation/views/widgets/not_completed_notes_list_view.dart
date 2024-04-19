@@ -4,8 +4,8 @@ import 'package:todo_app/features/note/presentation/manager/notes_cubit/notes_cu
 import 'package:todo_app/features/note/data/models/note_model.dart';
 import 'package:todo_app/features/note/presentation/views/widgets/note_item.dart';
 
-class NotesListView extends StatelessWidget {
-  const NotesListView({super.key});
+class NotCmpletedNotesListView extends StatelessWidget {
+  const NotCmpletedNotesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,14 @@ class NotesListView extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: notes.length,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: NoteItem(
-                  note: notes[index],
-                ),
-              );
+              return notes[index].completed == false
+                  ? Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: NoteItem(
+                        note: notes[index],
+                      ),
+                    )
+                  : const SizedBox.shrink();
             },
           ),
         );

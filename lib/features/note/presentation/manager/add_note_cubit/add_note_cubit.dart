@@ -15,12 +15,14 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   String categoryIcon = "assets/svg/design.svg";
   int priority = 1;
   String category = "Design";
+  bool isCompleted = false;
   // Method to add notes in the HIVE database
   addNote(NoteModel note) async {
     note.color = color.value;
     note.categoryIcon = categoryIcon;
     note.priority = priority;
     note.category = category;
+    note.completed = isCompleted;
     isLoading = true;
     emit(AddNoteLoading());
     try {

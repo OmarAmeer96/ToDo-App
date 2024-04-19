@@ -58,16 +58,38 @@ class NoteItem extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
-                            Text(
-                              note.title,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontFamily: 'Lato-Bold',
-                              ),
+                            InkWell(
+                              child: note.completed
+                                  ? const Icon(
+                                      FontAwesomeIcons.circleCheck,
+                                      color: Colors.white,
+                                      size: 22,
+                                    )
+                                  : const Icon(
+                                      FontAwesomeIcons.circle,
+                                      color: Colors.white,
+                                      size: 22,
+                                    ),
+                              onTap: () {
+                                note.completed = !note.completed;
+                                note.save();
+                                BlocProvider.of<NotesCubit>(context)
+                                    .fetchAllNotes();
+                              },
                             ),
+                            // Text(
+                            //   note.title,
+                            //   style: const TextStyle(
+                            //     color: Colors.white,
+                            //     fontSize: 24,
+                            //     fontFamily: 'Lato-Bold',
+                            //   ),
+                            // ),
                             const Spacer(),
                             const Text(
                               'Due To:  ',
@@ -88,15 +110,26 @@ class NoteItem extends StatelessWidget {
                             const SizedBox(width: 10),
                           ],
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             note.subTitle,
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                              fontSize: 23,
-                              fontFamily: 'Lato-Regular',
-                            ),
+                            style: note.completed
+                                ? TextStyle(
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 23,
+                                    fontFamily: 'Lato-Regular',
+                                    decoration: TextDecoration.lineThrough,
+                                  )
+                                : TextStyle(
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 23,
+                                    fontFamily: 'Lato-Regular',
+                                    decoration: TextDecoration.none,
+                                  ),
                           ),
                         ),
                       ],
