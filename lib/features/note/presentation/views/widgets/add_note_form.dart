@@ -31,15 +31,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
-          CustomTextField(
-            onSaved: (value) {
-              title = value;
-            },
-            hintText: "Title",
-          ),
-          const SizedBox(
-            height: 24,
-          ),
+          // CustomTextField(
+          //   onSaved: (value) {
+          //     title = value;
+          //   },
+          //   hintText: "Title",
+          // ),
+          // const SizedBox(
+          //   height: 24,
+          // ),
           CustomTextField(
             onSaved: (value) {
               subTitle = value;
@@ -76,7 +76,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   category: 'Design',
                   categoryIcon: 'assets/svg/design.svg',
                   priority: 1,
-                  title: title!,
+                  title: 'Title',
                   subTitle: subTitle!,
                   date: DateFormat('MM/dd hh:mm a').format(DateTime.now()),
                   color: Colors.deepOrange.value,

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         create: (context) => NotesCubit(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Notes App',
+          title: 'ToDO List App',
           theme: ThemeData(
             brightness: Brightness.dark,
             fontFamily: "Poppins-Medium",

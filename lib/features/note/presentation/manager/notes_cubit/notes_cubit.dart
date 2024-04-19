@@ -16,4 +16,19 @@ class NotesCubit extends Cubit<NotesState> {
     notes = notesBox.values.toList();
     emit(NotesSuccess());
   }
+
+  sortNotesByDate() {
+    notes!.sort((a, b) => a.date.compareTo(b.date));
+    emit(NotesSuccess());
+  }
+
+  filterNotesByCategory() {
+    notes!.sort((a, b) => a.category.compareTo(b.category));
+    emit(NotesSuccess());
+  }
+
+  sortNotedByPriorities() {
+    notes!.sort((a, b) => a.priority.compareTo(b.priority));
+    emit(NotesSuccess());
+  }
 }

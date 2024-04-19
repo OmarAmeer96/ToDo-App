@@ -43,16 +43,16 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(
             height: 24,
           ),
-          CustomTextField(
-            initialValue: widget.note.title,
-            onChanged: (value) {
-              title = value;
-            },
-            hintText: "Title",
-          ),
-          const SizedBox(
-            height: 24,
-          ),
+          // CustomTextField(
+          //   initialValue: widget.note.title,
+          //   onChanged: (value) {
+          //     title = value;
+          //   },
+          //   hintText: "Title",
+          // ),
+          // const SizedBox(
+          //   height: 24,
+          // ),
           CustomTextField(
             initialValue: widget.note.subTitle,
             onChanged: (value) {
