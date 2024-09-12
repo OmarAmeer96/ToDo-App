@@ -1,9 +1,9 @@
 workflows:
-  ios-simulator-workflow:
-    name: iOS Simulator Workflow
+  ios-workflow:
+    name: iOS Workflow
     max_build_duration: 60
     environment:
-      flutter: stable # Specify your Flutter channel (stable, beta, master)
+      flutter: stable # Use the stable channel
       xcode: latest # Use the latest Xcode version
       cocoapods: default
 
@@ -15,14 +15,21 @@ workflows:
           pod install
           cd ..
 
-      - name: Build iOS app for simulator
+      - name: Build iOS IPA for device
         script: |
-          flutter build ios --simulator --release
+          flutter build ipa --release # Generates a release IPA for a physical device
 
     artifacts:
-      - build/ios/**/*.app
+      - build/ios/ipa/**/*.ipa
 
     publishing:
       email:
         recipients:
-          - your-email@example.com
+          - omar.ameer244@gmail.com
+
+      app_store_connect:
+        api_key:
+          key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+          issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+          private_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        submit_to_testflight: false
