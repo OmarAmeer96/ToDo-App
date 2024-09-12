@@ -6,7 +6,7 @@ workflows:
       flutter: stable # Specify your Flutter channel (stable, beta, master)
       xcode: latest # Use the latest Xcode version
       cocoapods: default # Ensures CocoaPods is available
-      # Add your environment variables here (Optional)
+      # Add any environment variables you need
 
     triggering:
       events:
@@ -29,13 +29,6 @@ workflows:
       - build/ios/ipa/**/*.ipa
 
     publishing:
-      app_store_connect:
-        api_key:
-          key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-          issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-          private_key: $APP_STORE_CONNECT_PRIVATE_KEY
-        submit_to_testflight: true # Set to false if you don’t want automatic submission
-
       email:
         recipients:
-          - your-email@example.com
+          - omar.ameer244@gmail.com
